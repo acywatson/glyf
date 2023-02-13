@@ -33,8 +33,8 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/slydes.es.js",
-      "require": "./dist/slydes.umd.js"
+      "import": "./dist/glyf.es.js",
+      "require": "./dist/glyf.umd.js"
     },
     "./dist/style.css": "./dist/style.css"
   },
