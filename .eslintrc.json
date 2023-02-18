@@ -1,3 +1,5 @@
+
+
 {
     "env": {
         "browser": true,
@@ -12,11 +14,13 @@
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module",
-        "project": "./tsconfig.json"
+        "project": ["tsconfig.json"]
     },
     "plugins": [
         "react"
     ],
     "rules": {
+        "no-tabs": "warn",
+        "no-mixed-spaces-and-tabs": "warn"
     }
 }
