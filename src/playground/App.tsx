@@ -5,8 +5,8 @@ import { GlyfEditor } from 'src/components'
 function App(): JSX.Element {
   return (
     <div className="App">
-      <div>
-        <GlyfEditor/>
+      <div className="editorWrapper">
+        <GlyfEditor />
       </div>
     </div>
   )

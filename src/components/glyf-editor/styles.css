@@ -1,0 +1,12 @@
+.contentEditable {
+    height: 300px;
+    width: 100%;
+    padding: 0 8px;
+    border: 1px solid #fff;
+}
+
+.placeholder {
+    position: absolute;
+    top: 16px;
+    padding-left: 8px;
+}
