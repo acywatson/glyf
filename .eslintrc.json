@@ -21,6 +21,10 @@
     ],
     "rules": {
         "no-tabs": "warn",
-        "no-mixed-spaces-and-tabs": "warn"
+        "no-mixed-spaces-and-tabs": "warn",
+        "space-before-function-paren": "off",
+        "@typescript-eslint/space-before-function-paren": "off",
+        "semi": "off",
+        "@typescript-eslint/semi": "off"
     }
 }
