@@ -29,7 +29,7 @@ export default function Editor(): JSX.Element {
   const initialConfig = {
     namespace: 'MyEditor',
     theme,
-    onError,
+    onError
   };
 
   return (
