@@ -4,6 +4,10 @@
   padding: 2rem;
 }
 
+.editorHeading {
+  text-align: center;
+}
+
 .editorWrapper {
   position: relative;
 }

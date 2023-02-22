@@ -1,28 +1,28 @@
-import * as React from 'react'
-import './styles.css'
-import { LexicalComposer } from '@lexical/react/LexicalComposer'
-import { PlainTextPlugin } from '@lexical/react/LexicalPlainTextPlugin'
-import { ContentEditable } from '@lexical/react/LexicalContentEditable'
-import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary'
-import { type EditorState } from 'lexical'
+import * as React from 'react';
+import './styles.css';
+import { LexicalComposer } from '@lexical/react/LexicalComposer';
+import { PlainTextPlugin } from '@lexical/react/LexicalPlainTextPlugin';
+import { ContentEditable } from '@lexical/react/LexicalContentEditable';
+import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
+import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
+import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
+import { type EditorState } from 'lexical';
 
-const theme = {}
+const theme = {};
 
 function onError(error: Error): void {
-  console.error(error)
+  console.error(error);
 }
 
 function MyOnChangePlugin(props: { onChange: (editorState: EditorState) => void }): null {
-  const [editor] = useLexicalComposerContext()
-  const { onChange } = props
+  const [editor] = useLexicalComposerContext();
+  const { onChange } = props;
   React.useEffect(() => {
     return editor.registerUpdateListener(({ editorState }) => {
-      onChange(editorState)
-    })
-  }, [onChange, editor])
-  return null
+      onChange(editorState);
+    });
+  }, [onChange, editor]);
+  return null;
 }
 
 export default function Editor(): JSX.Element {
@@ -30,7 +30,7 @@ export default function Editor(): JSX.Element {
     namespace: 'MyEditor',
     theme,
     onError,
-  }
+  };
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
@@ -42,9 +42,9 @@ export default function Editor(): JSX.Element {
       <HistoryPlugin />
       <MyOnChangePlugin
         onChange={(editorState) => {
-          console.log(editorState)
+          console.log(editorState);
         }}
       />
     </LexicalComposer>
-  )
+  );
 }
