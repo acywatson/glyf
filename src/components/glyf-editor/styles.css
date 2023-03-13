@@ -7,6 +7,18 @@
 
 .placeholder {
     position: absolute;
-    top: 16px;
+    top: 60px;
     padding-left: 8px;
+}
+
+.glyf-editor-bold {
+    color: yellow;
+}
+
+.glyf-editor-italic {
+    color: aqua;
+}
+
+.glyf-editor-h1 {
+    background-color: blanchedalmond;
 }
