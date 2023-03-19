@@ -12,6 +12,7 @@ export default {
   component: Editor
 } as ComponentMeta<typeof Editor>;
 
+// @ts-expect-error not sure about this one - something in storybook?
 const Template: ComponentStory<typeof Editor> = (args) => <Editor {...args} />;
 
 export const FirstStory = Template.bind({});

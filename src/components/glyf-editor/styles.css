@@ -3,12 +3,17 @@
     width: 100%;
     padding: 0 8px;
     border: 1px solid #fff;
+    overflow-y: scroll;
 }
 
 .placeholder {
     position: absolute;
     top: 60px;
     padding-left: 8px;
+}
+
+.toolbar-wrapper {
+    display: flex;
 }
 
 .glyf-editor-bold {
@@ -20,5 +25,24 @@
 }
 
 .glyf-editor-h1 {
-    background-color: blanchedalmond;
+    font-size: 48px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.glyf-editor-h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: green;
+}
+
+.glyf-editor-h3 {
+    font-size: 32px;
+}
+
+.glyf-editor-banner {
+    background-color: rgba(138, 43, 226, 0.3);
+    margin: 8px 0;
+    padding: 8px;
+    border-left: 4px solid rgba(138, 43, 226, 1);
 }

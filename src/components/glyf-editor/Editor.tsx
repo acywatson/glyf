@@ -5,30 +5,24 @@ import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
-import { HeadingNode, $createHeadingNode } from '@lexical/rich-text';
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
-import { $getRoot, $createTextNode } from 'lexical';
+import { HeadingNode } from '@lexical/rich-text';
+import { ListPlugin } from '@lexical/react/LexicalListPlugin';
+import { ListNode, ListItemNode } from '@lexical/list';
+import { ToolbarPlugin } from '../glyf-toolbar/Toolbar';
+import { BannerPlugin, BannerNode } from './plugins/banner/BannerPlugin';
 
 const theme = {
   heading: {
-    h1: 'glyf-editor-h1'
+    h1: 'glyf-editor-h1',
+    h2: 'glyf-editor-h2',
+    h3: 'glyf-editor-h3'
   },
   text: {
     bold: 'glyf-editor-bold',
     italic: 'glyf-editor-italic'
-  }
+  },
+  banner: 'glyf-editor-banner'
 };
-
-function MyHeadingPlugin(): JSX.Element {
-  const [editor] = useLexicalComposerContext();
-  const onClick = (e: React.MouseEvent): void => {
-    editor.update(() => {
-      const root = $getRoot();
-      root.append($createHeadingNode('h1').append($createTextNode('Hello world')));
-    });
-  };
-  return <button onClick={onClick}>Heading</button>;
-}
 
 function onError(error: Error): void {
   console.error(error);
@@ -39,12 +33,14 @@ export default function Editor(): JSX.Element {
     namespace: 'MyEditor',
     theme,
     onError,
-    nodes: [HeadingNode]
+    nodes: [HeadingNode, ListNode, ListItemNode, BannerNode]
   };
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <MyHeadingPlugin />
+      <ToolbarPlugin />
+      <BannerPlugin />
+      <ListPlugin />
       <RichTextPlugin
         contentEditable={<ContentEditable className="contentEditable" />}
         placeholder={<div className="placeholder">Enter some text...</div>}
