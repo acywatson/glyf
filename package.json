@@ -42,7 +42,9 @@
   "module": "./dist/glyf.es.js",
   "types": "./dist/index.d.ts",
   "peerDependencies": {
+    "@lexical/list": "^0.8.0",
     "@lexical/react": "^0.8.0",
+    "@lexical/selection": "^0.8.0",
     "lexical": "^0.8.0",
     "react": ">=18.x",
     "react-dom": ">=18.x"
@@ -50,8 +52,6 @@
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@lexical/react": "^0.8.0",
-    "@lexical/selection": "^0.8.0",
-    "@lexical/list": "^0.8.0",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
@@ -82,5 +82,9 @@
     "vite-plugin-css-injected-by-js": "^2.1.1",
     "vite-plugin-dts": "^1.6.6",
     "vite-tsconfig-paths": "^3.5.2"
+  },
+  "dependencies": {
+    "@radix-ui/react-icons": "^1.2.0",
+    "@radix-ui/react-toolbar": "^1.0.3"
   }
 }

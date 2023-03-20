@@ -1,10 +1,74 @@
 import * as React from 'react';
+import './styles.css';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { $setBlocksType_experimental } from '@lexical/selection';
-import { $isRangeSelection, $getSelection } from 'lexical';
+import { $isRangeSelection, $getSelection, type TextFormatType } from 'lexical';
 import { $createHeadingNode } from '@lexical/rich-text';
 import { INSERT_ORDERED_LIST_COMMAND, INSERT_UNORDERED_LIST_COMMAND } from '@lexical/list';
 import { INSERT_BANNER_COMMAND } from '../glyf-editor/plugins/banner/BannerPlugin';
+import * as Toolbar from '@radix-ui/react-toolbar';
+import {
+  StrikethroughIcon,
+  FontBoldIcon,
+  FontItalicIcon,
+  UnderlineIcon,
+  PlusCircledIcon
+} from '@radix-ui/react-icons';
+import { OrderedListIcon, UnorderedListIcon } from './icons';
+
+interface ToolbarButtonProps {
+  onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  children: React.ReactNode;
+}
+
+function ToolbarButton(props: ToolbarButtonProps): JSX.Element {
+  return (
+    <Toolbar.Button className="ToolbarButton" onClick={props.onClick}>
+      {props.children}
+    </Toolbar.Button>
+  );
+}
+
+function TextFormatToolbarPlugin(): JSX.Element {
+  const [editor] = useLexicalComposerContext();
+  const getIcon = (format: TextFormatType): JSX.Element | null => {
+    switch (format) {
+      case 'bold':
+        return <FontBoldIcon />;
+      case 'italic':
+        return <FontItalicIcon />;
+      case 'strikethrough':
+        return <StrikethroughIcon />;
+      case 'underline':
+        return <UnderlineIcon />;
+      default:
+        return null;
+    }
+  };
+  const onClick = (format: TextFormatType): void => {
+    editor.update(() => {
+      const selection = $getSelection();
+      if ($isRangeSelection(selection)) {
+        selection.formatText(format);
+      }
+    });
+  };
+  const supportedTextFormats: TextFormatType[] = ['bold', 'italic', 'underline', 'strikethrough'];
+  return (
+    <>
+      {supportedTextFormats.map((format) => (
+        <ToolbarButton
+          key={format}
+          onClick={() => {
+            onClick(format);
+          }}
+        >
+          {getIcon(format)}
+        </ToolbarButton>
+      ))}
+    </>
+  );
+}
 
 type HeadingTag = 'h1' | 'h2' | 'h3';
 function HeadingToolbarPlugin(): JSX.Element {
@@ -21,24 +85,22 @@ function HeadingToolbarPlugin(): JSX.Element {
   return (
     <>
       {headingTags.map((tag) => (
-        <button
+        <ToolbarButton
           onClick={() => {
             onClick(tag);
           }}
           key={tag}
         >
           {tag.toUpperCase()}
-        </button>
+        </ToolbarButton>
       ))}
     </>
   );
 }
 
-type ListTag = 'ol' | 'ul';
 function ListToolbarPlugin(): JSX.Element {
   const [editor] = useLexicalComposerContext();
-  const listTags: ListTag[] = ['ol', 'ul'];
-  const onClick = (tag: ListTag): void => {
+  const onClick = (tag: 'ol' | 'ul'): void => {
     if (tag === 'ol') {
       editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined);
       return;
@@ -47,16 +109,20 @@ function ListToolbarPlugin(): JSX.Element {
   };
   return (
     <>
-      {listTags.map((tag) => (
-        <button
-          onClick={() => {
-            onClick(tag);
-          }}
-          key={tag}
-        >
-          {tag.toUpperCase()}
-        </button>
-      ))}
+      <ToolbarButton
+        onClick={() => {
+          onClick('ol');
+        }}
+      >
+        <OrderedListIcon />
+      </ToolbarButton>
+      <ToolbarButton
+        onClick={() => {
+          onClick('ul');
+        }}
+      >
+        <UnorderedListIcon />
+      </ToolbarButton>
     </>
   );
 }
@@ -66,15 +132,21 @@ function BannerToolbarPlugin(): JSX.Element {
   const onClick = (e: React.MouseEvent): void => {
     editor.dispatchCommand(INSERT_BANNER_COMMAND, undefined);
   };
-  return <button onClick={onClick}>Banner</button>;
+  return (
+    <ToolbarButton onClick={onClick}>
+      <PlusCircledIcon />
+      Banner
+    </ToolbarButton>
+  );
 }
 
 export function ToolbarPlugin(): JSX.Element {
   return (
-    <div className="toolbar-wrapper">
+    <Toolbar.Root className="ToolbarRoot">
+      <TextFormatToolbarPlugin />
       <HeadingToolbarPlugin />
       <ListToolbarPlugin />
       <BannerToolbarPlugin />
-    </div>
+    </Toolbar.Root>
   );
 }

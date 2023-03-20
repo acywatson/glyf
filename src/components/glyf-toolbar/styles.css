@@ -1,0 +1,50 @@
+button {
+    all: unset;
+}
+
+.ToolbarRoot {
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  min-width: max-content;
+}
+
+.ToolbarToggleItem,
+.ToolbarLink,
+.ToolbarButton {
+  flex: 0 0 auto;
+  height: 25px;
+  padding: 0 5px;
+  border-radius: 4px;
+  display: inline-flex;
+  font-size: 13px;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.ToolbarButton:hover {
+  /* background-color: var(--violet3);
+  color: var(--violet11); */
+}
+
+.ToolbarButton:focus {
+  position: relative;
+  /* box-shadow: 0 0 0 2px var(--violet7); */
+}
+
+.ToolbarSeparator {
+  width: 1px;
+  background-color: var(--mauve6);
+  margin: 0 10px;
+}
+
+.ToolbarButton {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  cursor: pointer;
+}
+.ToolbarButton:hover {
+  color: white;
+}

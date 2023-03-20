@@ -5,6 +5,7 @@
     border: 1px solid #fff;
     border-radius: 4px;
     overflow-y: scroll;
+    outline: none;
 }
 
 .placeholder {
@@ -18,11 +19,23 @@
 }
 
 .glyf-editor-bold {
-    color: yellow;
+    font-weight: 600;
 }
 
 .glyf-editor-italic {
-    color: aqua;
+    font-style: italic;
+}
+
+.glyf-editor-underline {
+    text-decoration: underline;
+}
+
+.glyf-editor-strikethrough {
+    text-decoration: line-through;
+}
+
+.glyf-editor-underlineStrikethrough {
+    text-decoration: underline line-through;
 }
 
 .glyf-editor-h1 {

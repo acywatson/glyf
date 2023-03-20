@@ -19,7 +19,10 @@ const theme = {
   },
   text: {
     bold: 'glyf-editor-bold',
-    italic: 'glyf-editor-italic'
+    italic: 'glyf-editor-italic',
+    underline: 'glyf-editor-underline',
+    strikethrough: 'glyf-editor-strikethrough',
+    underlineStrikethrough: 'glyf-editor-underlineStrikethrough'
   },
   banner: 'glyf-editor-banner'
 };
