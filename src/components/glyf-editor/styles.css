@@ -10,8 +10,9 @@
 
 .placeholder {
     position: absolute;
-    top: 60px;
+    top: 62px;
     padding-left: 8px;
+    pointer-events: none;
 }
 
 .toolbar-wrapper {
