@@ -22,7 +22,7 @@ export class BannerNode extends ElementNode {
   }
 
   createDOM(config: EditorConfig): HTMLElement {
-    const element = document.createElement('div');
+    const element = document.createElement('p');
     element.className = config.theme.banner;
     return element;
   }

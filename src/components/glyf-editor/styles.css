@@ -3,6 +3,7 @@
     width: 100%;
     padding: 0 8px;
     border: 1px solid #fff;
+    border-radius: 4px;
     overflow-y: scroll;
 }
 

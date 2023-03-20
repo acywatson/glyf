@@ -4,10 +4,19 @@
   padding: 2rem;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .editorHeading {
   text-align: center;
 }
 
 .editorWrapper {
   position: relative;
+  width: 80%;
+  min-width: 400px;
+  max-width: 1200px;
 }
