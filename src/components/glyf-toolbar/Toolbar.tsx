@@ -23,7 +23,7 @@ interface ToolbarButtonProps {
 
 function ToolbarButton(props: ToolbarButtonProps): JSX.Element {
   return (
-    <Toolbar.Button className="ToolbarButton" onClick={props.onClick}>
+    <Toolbar.Button className="toolbarButton" onClick={props.onClick}>
       {props.children}
     </Toolbar.Button>
   );
@@ -142,7 +142,7 @@ function BannerToolbarPlugin(): JSX.Element {
 
 export function ToolbarPlugin(): JSX.Element {
   return (
-    <Toolbar.Root className="ToolbarRoot">
+    <Toolbar.Root className="toolbarRoot">
       <TextFormatToolbarPlugin />
       <HeadingToolbarPlugin />
       <ListToolbarPlugin />

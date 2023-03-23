@@ -2,16 +2,14 @@ button {
     all: unset;
 }
 
-.ToolbarRoot {
+.toolbarRoot {
   display: flex;
   padding: 10px;
   width: 100%;
   min-width: max-content;
 }
 
-.ToolbarToggleItem,
-.ToolbarLink,
-.ToolbarButton {
+.toolbarButton {
   flex: 0 0 auto;
   height: 25px;
   padding: 0 5px;
@@ -23,28 +21,28 @@ button {
   justify-content: center;
 }
 
-.ToolbarButton:hover {
+.toolbarButton:hover {
   /* background-color: var(--violet3);
   color: var(--violet11); */
 }
 
-.ToolbarButton:focus {
+.toolbarButton:focus {
   position: relative;
   /* box-shadow: 0 0 0 2px var(--violet7); */
 }
 
-.ToolbarSeparator {
+.toolbarSeparator {
   width: 1px;
   background-color: var(--mauve6);
   margin: 0 10px;
 }
 
-.ToolbarButton {
+.toolbarButton {
   padding-left: 10px;
   padding-right: 10px;
   color: white;
   cursor: pointer;
 }
-.ToolbarButton:hover {
+.toolbarButton:hover {
   color: white;
 }
