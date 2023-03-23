@@ -85,6 +85,7 @@
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.2.0",
+    "@radix-ui/react-popover": "^1.0.5",
     "@radix-ui/react-toolbar": "^1.0.3"
   }
 }

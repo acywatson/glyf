@@ -15,6 +15,7 @@ import {
   PlusCircledIcon
 } from '@radix-ui/react-icons';
 import { OrderedListIcon, UnorderedListIcon } from './icons';
+import { BannerColorPickerPlugin } from '../glyf-editor/plugins/banner/BannerColorPickerPlugin';
 
 interface ToolbarButtonProps {
   onClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
@@ -147,6 +148,7 @@ export function ToolbarPlugin(): JSX.Element {
       <HeadingToolbarPlugin />
       <ListToolbarPlugin />
       <BannerToolbarPlugin />
+      <BannerColorPickerPlugin />
     </Toolbar.Root>
   );
 }

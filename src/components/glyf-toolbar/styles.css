@@ -21,14 +21,8 @@ button {
   justify-content: center;
 }
 
-.toolbarButton:hover {
-  /* background-color: var(--violet3);
-  color: var(--violet11); */
-}
-
 .toolbarButton:focus {
   position: relative;
-  /* box-shadow: 0 0 0 2px var(--violet7); */
 }
 
 .toolbarSeparator {

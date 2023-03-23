@@ -56,8 +56,6 @@
 }
 
 .glyf-editor-banner {
-    background-color: rgba(138, 43, 226, 0.3);
     margin: 8px 0;
     padding: 8px;
-    border-left: 4px solid rgba(138, 43, 226, 1);
 }
