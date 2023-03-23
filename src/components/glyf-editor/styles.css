@@ -48,11 +48,12 @@
 .glyf-editor-h2 {
     font-size: 40px;
     font-weight: bold;
-    color: green;
 }
 
 .glyf-editor-h3 {
-    font-size: 32px;
+    font-size: 24px;
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
 .glyf-editor-banner {
