@@ -26,6 +26,7 @@
         "@typescript-eslint/space-before-function-paren": "off",
         "semi": "off",
         "@typescript-eslint/semi": "off",
-        "@typescript-eslint/member-delimiter-style": "off"
+        "@typescript-eslint/member-delimiter-style": "off",
+        "multiline-ternary": "off"
     }
 }
