@@ -2,7 +2,7 @@ import React from 'react';
 
 import { type ComponentStory, type ComponentMeta } from '@storybook/react';
 
-import Editor from './Editor';
+import Editor from '../Editor';
 import './styles.css';
 import './stories.css';
 
