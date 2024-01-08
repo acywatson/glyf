@@ -1,15 +1,17 @@
 import * as React from 'react';
-import './styles.css';
+import { ListItemNode, ListNode } from '@lexical/list';
 import { LexicalComposer } from '@lexical/react/LexicalComposer';
 import { ContentEditable } from '@lexical/react/LexicalContentEditable';
-import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
+import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
+import { ListPlugin } from '@lexical/react/LexicalListPlugin';
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import { HeadingNode } from '@lexical/rich-text';
-import { ListPlugin } from '@lexical/react/LexicalListPlugin';
-import { ListNode, ListItemNode } from '@lexical/list';
+import { type EditorState } from 'lexical';
 import { ToolbarPlugin } from '../glyf-toolbar/Toolbar';
-import { BannerPlugin, BannerNode } from './plugins/banner/BannerPlugin';
+import { BannerNode, BannerPlugin } from './plugins/banner/BannerPlugin';
+import './styles.css';
+import OnChangePlugin from './plugins/on-change/OnChangePlugin';
 
 const theme = {
   heading: {
@@ -31,7 +33,11 @@ function onError(error: Error): void {
   console.error(error);
 }
 
-export default function Editor(): JSX.Element {
+interface EditorProps {
+  onChange: (editorState: EditorState, htmlContent: string) => void;
+}
+
+export default function Editor({ onChange }: EditorProps): JSX.Element {
   const initialConfig = {
     namespace: 'MyEditor',
     theme,
@@ -41,6 +47,7 @@ export default function Editor(): JSX.Element {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
+      <OnChangePlugin onChange={onChange} />
       <ToolbarPlugin />
       <BannerPlugin />
       <ListPlugin />

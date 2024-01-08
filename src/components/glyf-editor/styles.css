@@ -1,62 +1,66 @@
 .contentEditable {
-    height: 300px;
-    width: 100%;
-    padding: 0 8px;
-    border: 1px solid #fff;
-    border-radius: 4px;
-    overflow-y: scroll;
-    outline: none;
+  height: 300px;
+  width: 100%;
+  padding: 0 8px;
+  border: 1px solid;
+  border-radius: 4px;
+  overflow-y: scroll;
+  outline: none;
+}
+
+.contentEditable:focus {
+  border: 1.5px solid;
 }
 
 .placeholder {
-    position: absolute;
-    top: 62px;
-    padding-left: 8px;
-    pointer-events: none;
+  position: absolute;
+  top: 62px;
+  padding-left: 8px;
+  pointer-events: none;
 }
 
 .toolbar-wrapper {
-    display: flex;
+  display: flex;
 }
 
 .glyf-editor-bold {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .glyf-editor-italic {
-    font-style: italic;
+  font-style: italic;
 }
 
 .glyf-editor-underline {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .glyf-editor-strikethrough {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .glyf-editor-underlineStrikethrough {
-    text-decoration: underline line-through;
+  text-decoration: underline line-through;
 }
 
 .glyf-editor-h1 {
-    font-size: 48px;
-    text-decoration: underline;
-    font-weight: bold;
+  font-size: 48px;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .glyf-editor-h2 {
-    font-size: 40px;
-    font-weight: bold;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .glyf-editor-h3 {
-    font-size: 24px;
-    font-weight: normal;
-    text-transform: uppercase;
+  font-size: 24px;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 .glyf-editor-banner {
-    margin: 8px 0;
-    padding: 8px;
+  margin: 8px 0;
+  padding: 8px;
 }

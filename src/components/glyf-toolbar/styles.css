@@ -1,5 +1,5 @@
 button {
-    all: unset;
+  all: unset;
 }
 
 .toolbarRoot {
@@ -34,9 +34,7 @@ button {
 .toolbarButton {
   padding-left: 10px;
   padding-right: 10px;
-  color: white;
   cursor: pointer;
 }
 .toolbarButton:hover {
-  color: white;
 }
