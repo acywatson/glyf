@@ -7,7 +7,11 @@ function App(): JSX.Element {
     <div className="App">
       <h1 className="editorHeading">Glyf Editor</h1>
       <div className="editorWrapper">
-        <GlyfEditor />
+        <GlyfEditor
+          onChange={(editorState, htmlContent) => {
+            console.log(htmlContent);
+          }}
+        />
       </div>
     </div>
   );
