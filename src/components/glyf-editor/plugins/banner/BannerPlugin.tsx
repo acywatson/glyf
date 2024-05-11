@@ -45,8 +45,8 @@ export class BannerNode extends ElementNode {
 
   updateDOM(prevNode: HTMLElement, domNode: HTMLElement): boolean {
     return (
-      prevNode.style.backgroundColor !== domNode.style.backgroundColor ||
-      prevNode.style.borderLeft !== domNode.style.borderLeft
+      prevNode.style?.backgroundColor !== domNode.style.backgroundColor ||
+      prevNode.style?.borderLeft !== domNode.style.borderLeft
     );
   }
 
